@@ -6,6 +6,7 @@
 package ca.sheridancollege.week3.softwarefundamentals.exercise1;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -17,10 +18,21 @@ public class CardTrick {
     
     public static void main(String[] args)
     {
+        Card[] magicHand = generateMagicHand();
+        Card luckyCard = askForLuckyCard();
+        
+        if(IsUserLucky(magicHand, luckyCard)){
+            System.out.print("Congratulations! You won the game.");
+        }
+        else{
+            System.out.print("Oops! you lost, please try again");
+        }
+    }
+    
+    public static Card[] generateMagicHand(){
         Card[] magicHand = new Card[7];
         
-        for (int i=0; i<magicHand.length; i++)
-        {
+        for (int i=0; i<magicHand.length; i++){
             Card c = new Card();
             
             Random rand = new Random();
@@ -29,11 +41,37 @@ public class CardTrick {
 
             c.setValue(cardValue);
             c.setSuit(Card.SUITS[suitValue]);
+            
+            magicHand[i] = c;
         }
         
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+        return magicHand;
     }
     
+    public static Card askForLuckyCard(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter lucky card number: (1-13)");
+        int luckyCardNumber = scanner.nextInt();
+
+        System.out.print("Enter lucky card suit: (0: Hearts, 1: Diamonds, 2: Spades, 3:Clubs)");
+        int luckyCardSuit = scanner.nextInt();
+
+        Card luckyCard = new Card();
+        luckyCard.setValue(luckyCardNumber);
+        luckyCard.setSuit(Card.SUITS[luckyCardSuit]);
+        
+        return luckyCard;
+    }
+    
+    public static Boolean IsUserLucky(Card[] magicHand, Card luckyCard){
+        for(int i=0; i<magicHand.length; i++){
+            Card currentCard = magicHand[i];
+            if(currentCard.getSuit().equalsIgnoreCase(luckyCard.getSuit()) && 
+               currentCard.getValue() == luckyCard.getValue()){
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
