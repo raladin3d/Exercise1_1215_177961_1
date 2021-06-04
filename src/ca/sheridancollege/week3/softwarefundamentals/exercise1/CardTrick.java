@@ -21,13 +21,7 @@ public class CardTrick {
     {
         Card[] magicHand = generateMagicHand();
         Card luckyCard = askForLuckyCard();
-        
-        if(IsUserLucky(magicHand, luckyCard)){
-            System.out.print("Congratulations! You won the game.");
-        }
-        else{
-            System.out.print("Oops! you lost, please try again");
-        }
+        printResult(magicHand, luckyCard);
     }
     
     public static Card[] generateMagicHand(){
@@ -51,10 +45,10 @@ public class CardTrick {
     
     public static Card askForLuckyCard(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter lucky card number: (1-13)");
+        System.out.print("Enter lucky card number: (1-13)\n");
         int luckyCardNumber = scanner.nextInt();
 
-        System.out.print("Enter lucky card suit: (0: Hearts, 1: Diamonds, 2: Spades, 3:Clubs)");
+        System.out.print("Enter lucky card suit: (0: Hearts, 1: Diamonds, 2: Spades, 3:Clubs)\n");
         int luckyCardSuit = scanner.nextInt();
 
         Card luckyCard = new Card();
@@ -74,5 +68,21 @@ public class CardTrick {
         }
         
         return false;
+    }
+    
+    public static void printResult(Card[] magicHand, Card luckyCard){
+        System.out.print("The magic hand is the following: \n");
+        for(int i=0; i<magicHand.length; i++){
+            int cardValue = magicHand[i].getValue();
+            var cardSuit = magicHand[i].getSuit();
+            System.out.print(String.format("Card: %d of %s\n", cardValue, cardSuit));
+        }
+        
+        if(IsUserLucky(magicHand, luckyCard)){
+            System.out.print("Congratulations! You won the game.\n");
+        }
+        else{
+            System.out.print("Oops! you lost, please try again\n");
+        }
     }
 }
