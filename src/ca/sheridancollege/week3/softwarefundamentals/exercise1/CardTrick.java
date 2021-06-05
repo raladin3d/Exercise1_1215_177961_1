@@ -59,5 +59,35 @@ public class CardTrick {
         
         return selectedCard;
     }
+
+    public static Boolean CardMatchResult(Card[] magicHand, Card selectedCard){
+        for(int i=0; i<magicHand.length; i++){
+            Card inhandCard = magicHand[i];
+            if(inhandCard.getSuit().equalsIgnoreCase(selectedCard.getSuit()) && 
+               inhandCard.getValue() == selectedCard.getValue()){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public static void displayResult(Card[] magicHand, Card selectedCard){
+        System.out.print("\nThe 7 random cards selected are: \n");
+        for(int i=0; i<magicHand.length; i++){
+            int cardValue = magicHand[i].getValue();
+            var cardSuit = magicHand[i].getSuit();
+            System.out.println(String.format("Car1"
+                    + "d: %d of %s", cardValue, cardSuit));
+        }
+      
+        if(CardMatchResult(magicHand, selectedCard)){
+            System.out.println("You Win! Your card matched");
+        }
+        else{
+            System.out.println("\nYou Lost! Your card was not amongst the 7 "
+                    + "randomly selected");
+        }
+    }
     
 }
