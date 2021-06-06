@@ -57,6 +57,7 @@ public class CardTrick {
         } else {
             System.out.println("User's card not match the magicHand");
         }
+          System.out.println("User's card: " + userCard);
     }
     
 }
