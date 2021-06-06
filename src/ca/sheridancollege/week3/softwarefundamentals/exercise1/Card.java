@@ -12,7 +12,7 @@ package ca.sheridancollege.week3.softwarefundamentals.exercise1;
  * There are 52 cards in a deck, no jokers.
  * This code is to be used in ICE1. When you create your own branch,
  * add your name as a modifier.
- * @author Ya Su   991638096
+ * @author asidhu3
  */
 public class Card {
 
@@ -24,12 +24,7 @@ public class Card {
      * @return the suit
      */
    
-   public Card(){
-   }
-   public Card(int value, String suit){
-       this.value=value;
-       this.suit= suit;   
-   }
+
    
     public String getSuit() {
         return suit;
