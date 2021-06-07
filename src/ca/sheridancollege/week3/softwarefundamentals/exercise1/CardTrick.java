@@ -55,6 +55,7 @@ public class CardTrick {
         //Then report the result here
         if(!result){
             System.out.println("You loose The game");
+            System.out.println("The correct choice was out of"+ magicHand[i].getValue() + " " + magicHand[i].getSuit());
         }else{
             System.out.println("You Won the game by Guessing the correct card");
             System.out.print("the Selected Card was" + c.getValue() +" " + c.getSuit());
