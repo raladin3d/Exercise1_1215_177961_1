@@ -44,8 +44,21 @@ public class CardTrick {
         
         
         // and search magicHand here
+        for (int i=0 ;i<magicHand.length; i++){
+            if(magicHand[i].getValue() == c.getValue() && magicHand[i].getSuit() == c.getSuit()){
+                result = true;
+                break;
+            }
+        }
+
         
         //Then report the result here
+        if(!result){
+            System.out.println("You loose The game");
+        }else{
+            System.out.println("You Won the game by Guessing the correct card");
+            System.out.print("the Selected Card was" + c.getValue() +" " + c.getSuit());
+        }
         
     }
     
