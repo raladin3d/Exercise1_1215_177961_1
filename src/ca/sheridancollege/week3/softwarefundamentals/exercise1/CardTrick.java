@@ -29,19 +29,36 @@ public class CardTrick {
             magicHand[i].setSuit(Card.SUITS[(int)(Math.random()*3)]);
         }
 
-        //insert code to ask the user for Card value and suit, create their card
         //Asking User to enter the details of the card
-        System.out.println("Enter your Selected Card Details below...");
+        System.out.println("Enter your Card Details below...");
+        System.out.println("Enter the Number Corresponding to the Card Suit: ");
+        System.out.println("1. Hearts, 2.Diamonds, 3.Spades, 4.Clubs");
+        int suit = input.nextInt();
         System.out.print("Card Value: ");
         int value = input.nextInt();
-        System.out.print("Card Suit: ");
-        String suit = input.next();
         userCard.setValue(value);
-        userCard.setSuit(suit);
+        userCard.setSuit(Card.SUITS[suit-1]);
 
-        
-        // and search magicHand here
-        //Then report the result here
+        //Searching the array for the card
+        for (Card card : magicHand) {
+            if (userCard.getValue() == card.getValue() &&
+                    userCard.getSuit().equalsIgnoreCase(card.getSuit())) {
+                flag = true;
+                break;
+            }
+        }
+
+        //printing the result of the draw
+        if (!flag) {
+            System.out.println("\nSORRY, THAT CARD IS NOT A PART OF THE " +
+                    "MAGIC HAND!!");
+        } else {
+            System.out.println("\nYOU WON!");
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("THE LUCKY CARD IS " + userCard.getValue() +
+                    " of " + userCard.getSuit());
+        }
+
     }
-    
+
 }
