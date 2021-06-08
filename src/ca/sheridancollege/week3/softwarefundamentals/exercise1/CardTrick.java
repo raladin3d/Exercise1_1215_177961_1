@@ -41,18 +41,8 @@ public class CardTrick {
         defaultCard.setValue(face);
         defaultCard.setSuit(suit);
         
-        for(int i = 0; i < magicHand.length; i++){
-            if(magicHand[i].getValue() == defaultCard.getValue() && magicHand[i].getSuit().equalsIgnoreCase(defaultCard.getSuit()))
-            {
-                found = true;
-                break;
-            }
-        }   
-        
-        if(found)
-            System.out.println("Default User Card Found in MagicHand");
-        else
-            System.out.println("Default User Card Not Found in MagicHand");
+        System.out.println("The User Selected the: " + face + " of " + suit);
+       
         
     }
     
