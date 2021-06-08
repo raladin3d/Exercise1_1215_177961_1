@@ -49,7 +49,8 @@ public class CardTrick {
         boolean match = false;
         for (int i = 0; i<magicHand.length; i++){
             if (user.getValue() == magicHand[i].getValue() && 
-                    user.getSuit().equalsIgnoreCase(magicHand[i].getSuit())){
+                    user.getSuit().equalsIgnoreCase(magicHand[i].getSuit()))
+            {
                 
                 match = true;
                 break;
@@ -58,11 +59,29 @@ public class CardTrick {
         
         if (match){
             System.out.println("The card you chose exists in the magic hand");
-        } else System.out.println("The card you chose does not exist in magic hand");
+        } else 
+            System.out.println("The card you chose does not exist in magic hand");
         
         System.out.println("You chose the " + value + " of " + suit);
         
+        Card luckyCard = new Card();
+        luckyCard.setValue(10);
+        luckyCard.setSuit(Card.SUITS[0]);
+        boolean match = false;
         
+        for (int i = 0; i<magicHand.length; i++){
+            if (luckyCard.getValue() == magicHand[i].getValue() &&
+                luckyCard.getSuit().equalsIgnoreCase(magicHand[i].getValue()))
+            {
+                
+                match = true;
+                break;
+            }
+            
+            if (match){
+                System.out.println("Congrats, lucky card found in the magic hand");
+            }  else 
+                System.out.println("Sorry, lucky card not found in magic hand");
         
     }
     
