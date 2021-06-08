@@ -26,22 +26,39 @@ public class CardTrick {
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
             c.setValue((int) (Math.random() * 13 + 1));
             c.setSuit(Card.SUITS[(int)(Math.random()*4)]);
+            magicHand [i] = c;
         }
         
         //insert code to ask the user for Card value and suit, create their card
-        Card ca = new Card();
-        Scanner input = new Scanner (System.in);
-        System.out.println("Enter card Value:");
-        int value = input.nextInt();
-        System.out.println("Enter suit:(Heart , Spade , Club , Diamonds)");
-        String suit = input.next();
+        Card luckyCard = new Card();
         
-        ca.setValue(value);
-        ca.setSuit(suit);
+//        Scanner input = new Scanner (System.in);
+//        System.out.println("Enter card Value:");
+//        int value = input.nextInt();
+//        System.out.println("Enter suit:(Heart , Spade , Club , Diamonds)");
+//        String suit = input.next();
         
-        System.out.println("The card user picked : " + value + "  " + suit );
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Diamonds");
+        
+        
+        //System.out.println("The card user picked : " + value + "  " + suit );
         // and search magicHand here
         //Then report the result here
+        
+        // and search magicHand here
+        boolean correct = false;
+        for(int i=0; i<magicHand.length; i++){
+            if(magicHand[i].getValue()==luckyCard.getValue() && magicHand[i].getSuit()==luckyCard.getSuit()){
+               correct = true;
+                break;
+            }
+        }
+        if (correct){
+            System.out.println("YOU WON!!");
+        }else{
+            System.out.println("You Lost");
+        }
     }
     
 }
