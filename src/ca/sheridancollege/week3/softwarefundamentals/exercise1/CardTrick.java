@@ -24,15 +24,21 @@ public class CardTrick {
             Card c = new Card();
             //c.setValue(insert call to random number generator here)
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-          
-            c.setValue((int) (1+Math.random() * 13));
-          
+            
+            
+           c.setValue((int) (1+Math.random() * 13));
+            //System.out.println(c.getValue());
         
-            c.setSuit(Card.SUITS[(int) (Math.random() * 4 + 0)]);
-          
+           c.setSuit(Card.SUITS[(int) (Math.random() * 4 + 0)]);
+            //System.out.println(c.getSuit());
+            magicHand[i]=c;
             
             
         }
+//        for(int i=0;i<magicHand.length;i++){
+//            System.out.println(magicHand[i].getValue());
+//            System.out.println(magicHand[i].getSuit());
+//        }
         
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
@@ -42,8 +48,9 @@ public class CardTrick {
         input.nextLine();
         System.out.println("Enter the card suit:-");
         String s=input.nextLine();
-        input.nextLine();
-        
-       }       
+        input.nextLine();       
+       }  
+    
+    
     }
     
