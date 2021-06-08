@@ -19,6 +19,7 @@ public class CardTrick {
     public static void main(String[] args){
         Card[] magicHand = new Card[7];
         Card userCard = new Card();
+        Card finalCard = new Card();
         boolean flag = false;
         Scanner input = new Scanner(System.in);
 
@@ -30,19 +31,30 @@ public class CardTrick {
         }
 
         //Asking User to enter the details of the card
-        System.out.println("Enter your Card Details below...");
-        System.out.println("Enter the Number Corresponding to the Card Suit: ");
-        System.out.println("1. Hearts, 2.Diamonds, 3.Spades, 4.Clubs");
-        int suit = input.nextInt();
-        System.out.print("Card Value: ");
+        System.out.println("......THE CARD GAME......");
+        System.out.println("Enter the Suit of the Card(from the one mentioned "+
+                "below)");
+        System.out.print("Hearts, Diamonds, Spades, Clubs: ");
+        String suit = input.next();
+        System.out.print("Card Value(b/w 1-13): ");
         int value = input.nextInt();
         userCard.setValue(value);
-        userCard.setSuit(Card.SUITS[suit-1]);
+        userCard.setSuit(suit);
+
+        //displaying the card entered by the user.
+        System.out.print("\nThe Card you Entered is: ");
+        System.out.println(userCard.getValue() + " of " + userCard.getSuit());
+
+        //setting the card to a particular card
+        finalCard.setValue(6);
+        finalCard.setSuit(Card.SUITS[1]);
+
+        System.out.println("Searching the Card in the MAGIC HAND..........");
 
         //Searching the array for the card
         for (Card card : magicHand) {
-            if (userCard.getValue() == card.getValue() &&
-                    userCard.getSuit().equalsIgnoreCase(card.getSuit())) {
+            if (finalCard.getValue() == card.getValue() &&
+                    finalCard.getSuit().equalsIgnoreCase(card.getSuit())) {
                 flag = true;
                 break;
             }
@@ -55,8 +67,8 @@ public class CardTrick {
         } else {
             System.out.println("\nYOU WON!");
             System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println("THE LUCKY CARD IS " + userCard.getValue() +
-                    " of " + userCard.getSuit());
+            System.out.println("THE LUCKY CARD IS " + finalCard.getValue() +
+                    " of " + finalCard.getSuit());
         }
 
     }
