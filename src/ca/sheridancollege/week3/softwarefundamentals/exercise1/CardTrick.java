@@ -39,7 +39,7 @@ public class CardTrick {
         ca.setValue(value);
         ca.setSuit(suit);
         
-        System.out.println("The card user picked : " + value "  " + suit )
+        System.out.println("The card user picked : " + value "  " + suit );
         // and search magicHand here
         //Then report the result here
     }
