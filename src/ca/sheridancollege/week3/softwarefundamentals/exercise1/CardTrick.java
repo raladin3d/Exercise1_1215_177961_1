@@ -38,8 +38,8 @@ public class CardTrick {
             magicHand[i] = c;
         }
 
-        // create a default user card
-        Card userCard = new Card();
+        // created a default user card called luckyCard
+        Card luckyCard = new Card();
         int value;
         String suit;
         boolean found = false;
