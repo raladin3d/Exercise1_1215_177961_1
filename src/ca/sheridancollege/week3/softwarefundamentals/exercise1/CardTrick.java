@@ -60,6 +60,10 @@ public class CardTrick {
             System.out.println("The card you chose exists in the magic hand");
         } else System.out.println("The card you chose does not exist in magic hand");
         
+        System.out.println("You chose the " + value + " of " + suit);
+        
+        
+        
     }
     
 }
