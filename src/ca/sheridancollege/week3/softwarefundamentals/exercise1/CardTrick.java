@@ -48,7 +48,10 @@ public class CardTrick {
         input.nextLine();
         System.out.println("Enter the card suit:-");
         String s=input.nextLine();
-        input.nextLine();       
+        input.nextLine();  
+        
+        System.out.printf("Card you picked is %d and is of suit %s: ",value,s);
+        
        }  
     
     
