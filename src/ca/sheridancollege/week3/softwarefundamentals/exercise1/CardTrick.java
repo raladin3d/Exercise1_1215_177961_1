@@ -47,7 +47,7 @@ public class CardTrick {
         }
         //Then report the result here
         if (luckyCard==null){
-            System.out.print("Cant't find the card you guessed!");
+            System.out.print("You're lost! Cant't find the card you guessed!");
         }else{
             System.out.print("Bingo, There are cards you're looking for! Card suit:"+luckyCard.getSuit() + "Card value:"+luckyCard.getValue());
         }
