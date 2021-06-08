@@ -30,7 +30,7 @@ public class CardTrick {
         }
         
         boolean found = false;
-        Card userCard = new Card();
+        Card luckyCard = new Card();
         luckyCard.setValue(5);
         luckyCard.setSuit(Card.SUITS[1]);
      
