@@ -39,7 +39,18 @@ public class CardTrick {
         
         String Cardsuit = input.next();
         // and search magicHand here
+        Card luckyCard = null;
+        for (int i = 0; i < magicHand.length; i++){
+            if (magicHand[i].getSuit().equals(Cardsuit.trim())&&magicHand[i].getValue()==Cardvalue){
+                luckyCard = magicHand[i];
+            }
+        }
         //Then report the result here
+        if (luckyCard==null){
+            System.out.print("Cant't find the card you guessed!");
+        }else{
+            System.out.print("Bingo, There are cards you're looking for! Card suit:"+luckyCard.getSuit() + "Card value:"+luckyCard.getValue());
+        }
     }
     
 }
