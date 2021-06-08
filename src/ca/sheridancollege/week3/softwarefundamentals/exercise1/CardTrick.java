@@ -33,13 +33,13 @@ public class CardTrick {
         Scanner input = new Scanner (System.in);
         System.out.println("Enter card Value:");
         int value = input.nextInt();
-        System.out.println("Enter suit:");
+        System.out.println("Enter suit:(Heart , Spade , Club , Diamonds)");
         String suit = input.next();
         
         ca.setValue(value);
         ca.setSuit(suit);
         
-        
+        System.out.println("The card user picked : " + value "  " + suit )
         // and search magicHand here
         //Then report the result here
     }
