@@ -67,11 +67,11 @@ public class CardTrick {
         Card luckyCard = new Card();
         luckyCard.setValue(10);
         luckyCard.setSuit(Card.SUITS[0]);
-        boolean match = false;
+   
         
         for (int i = 0; i<magicHand.length; i++){
             if (luckyCard.getValue() == magicHand[i].getValue() &&
-                luckyCard.getSuit().equalsIgnoreCase(magicHand[i].getValue()))
+                luckyCard.getSuit().equalsIgnoreCase(magicHand[i].getSuit()))
             {
                 
                 match = true;
@@ -85,4 +85,5 @@ public class CardTrick {
         
     }
     
+}
 }
