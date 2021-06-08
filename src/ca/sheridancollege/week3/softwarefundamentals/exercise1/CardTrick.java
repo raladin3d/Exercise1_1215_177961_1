@@ -37,8 +37,8 @@ public class CardTrick {
         System.out.print("Enter suit of the card" + Arrays.toString(Card.SUITS) + ": ");
         suit = input.next();
         // sets of value/ suit for user card
-        personCard.setValue(5); 
-        personCard.setSuit("Diamond");
+        personCard.setValue(value); //made it value because we need any value user enters
+        personCard.setSuit(suit);   //made it suit cause we need any suit the user enters
 
         // loop that finds if the user's choice of Card is in the Magic Hand
         for (int i = 0; i < magicHand.length; i++) {
