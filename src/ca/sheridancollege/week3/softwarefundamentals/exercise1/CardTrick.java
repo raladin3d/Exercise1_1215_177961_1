@@ -78,12 +78,15 @@ public class CardTrick {
                 break;
             }
             
+        }
+            
             if (match){
                 System.out.println("Congrats, lucky card found in the magic hand");
             }  else 
                 System.out.println("Sorry, lucky card not found in magic hand");
+            
         
     }
     
 }
-}
+        
