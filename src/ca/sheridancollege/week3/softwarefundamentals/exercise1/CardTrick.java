@@ -24,7 +24,7 @@ public class CardTrick {
         }
 
         // create's a default person Card
-        Card personCard = new Card();
+        Card personCard = new Card(); //personCard = luckyCard
         int value;
         String suit;
         boolean find = false;
@@ -37,8 +37,8 @@ public class CardTrick {
         System.out.print("Enter suit of the card" + Arrays.toString(Card.SUITS) + ": ");
         suit = input.next();
         // sets of value/ suit for user card
-        personCard.setValue(value);
-        personCard.setSuit(suit);
+        personCard.setValue(5); 
+        personCard.setSuit("Diamond");
 
         // loop that finds if the user's choice of Card is in the Magic Hand
         for (int i = 0; i < magicHand.length; i++) {
