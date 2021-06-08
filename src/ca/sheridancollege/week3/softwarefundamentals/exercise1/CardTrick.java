@@ -39,8 +39,11 @@ public class CardTrick {
         System.out.println("Please 0.Hearts 1.Diamonds 2.Spades 3.Clubs ");
         int u_suit = input.nextInt();
         
+        
         c.setValue(u_value);
         c.setSuit(c.SUITS[u_suit]);
+        
+        System.out.println("You Choose "+ u_value + " of " + c.getSuit());
         
         
         // and search magicHand here
