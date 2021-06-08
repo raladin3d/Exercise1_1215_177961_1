@@ -33,17 +33,21 @@ public class CardTrick {
         int face;
         String suit;
         boolean found = false;
-        System.out.println("Enter the value of your card choice:");
-        face = k.nextInt();
-        System.out.println("Enter the suit of your card please" + (Arrays.toString(Card.SUITS)+":"));
-        suit = k.next();
         
-        defaultCard.setValue(face);
-        defaultCard.setSuit(suit);
+        Card hardCode = new Card();
+        hardCode.setValue(8);
+        hardCode.setSuit("Diamonds");
+        System.out.println("Looking for Lucky Card!" + hardCode);
         
-        System.out.println("The User Selected the: " + face + " of " + suit);
-       
-        
+        for (int i = 0; i < magicHand.length; i++){
+            if((magicHand[i].getValue() == hardCode.getValue()) && magicHand[i].getSuit().equalsIgnoreCase(hardCode.getSuit())){
+                System.out.println("The Lucky Card has been found in the hand!");
+                found = true;
+                break;
+            }
+            if (!found)
+                System.out.println("Lucky card has not been found in the hand!");
+        }
     }
     
 }
