@@ -31,7 +31,7 @@ public class CardTrick {
 
         //Scanner 
         Scanner input = new Scanner(System.in);
-        // asks user for input 
+        // asks user for input for card value and suits 
         System.out.print("Enter Value of card that is between 1-7: ");
         value = input.nextInt();
         System.out.print("Enter suit of the card" + Arrays.toString(Card.SUITS) + ": ");
