@@ -48,7 +48,7 @@ public class CardTrick {
                 break;
             }
         }
-        // display wether the Card was found or not
+        // display the Card was found or not
         if (find) {
             System.out.println("Card was found in the Magic Hand");
         } else {
