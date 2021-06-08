@@ -22,22 +22,35 @@ public class CardTrick {
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
-            c.setValue((int)Math.random()*12);
-            c.setSuit(Card.SUITS[(int)Math.random()*3]);
+            c.setValue(1+(int)Math.random()*13);
+            c.setSuit(Card.SUITS[(int)Math.random()*4]);
             magicHand[i] = c;
         }
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
         //Then report the result here
-        Card p = new Card();
+        Card luckCard = new Card();
         Scanner input = new Scanner(System.in);
         System.out.println("please pick any card value (1-13): ");
-        p.setValue(input.nextInt());
+        luckCard.setValue(input.nextInt());
         System.out.println("please pick any card suit (Hearts, Diamonds, Spades, Clubs): ");
-        p.setSuit(input.nextLine());
-        
-        System.out.println("You pick the card ["+p.getSuit()+"]"+p.getValue());
+        luckCard.setSuit(input.next());
 
+        System.out.println("You pick the card ["+luckCard.getSuit()+"]"+luckCard.getValue());
+
+        Boolean winOrLose = false;
+        for(Card c : magicHand) {
+            if (luckCard.getSuit().equals(c.getSuit()) && luckCard.getValue() == c.getValue()) {
+                winOrLose = true;
+                 break;
+            }
+        }
+
+        if (winOrLose) {
+            System.out.println("You Win the Game");
+        } else {
+            System.out.println("You Lose the Game.");
+        }
     }
     
 }
