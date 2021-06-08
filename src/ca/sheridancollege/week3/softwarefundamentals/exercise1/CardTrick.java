@@ -10,6 +10,7 @@ package ca.sheridancollege.week3.softwarefundamentals.exercise1;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author Om Patel
+ * Student ID:-991623247;
  */
 import java.util.Scanner;
 public class CardTrick {
@@ -35,14 +36,13 @@ public class CardTrick {
             
             
         }
+        
 //        for(int i=0;i<magicHand.length;i++){
 //            System.out.println(magicHand[i].getValue());
 //            System.out.println(magicHand[i].getSuit());
-//        }
+//         }
         
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
+
         System.out.println("Pick any card between 1 to 13:-");
         int value=input.nextInt();
         input.nextLine();
@@ -52,8 +52,21 @@ public class CardTrick {
         
         System.out.printf("Card you picked is %d and is of suit %s: ",value,s);
         
-       }  
-    
-    
+        Card luckyCard=new Card();
+        luckyCard.setValue(7);
+        luckyCard.setSuit("Spades");
+        boolean var=false;
+        for(int i=0;i<magicHand.length;i++){
+            if(luckyCard.getValue()==magicHand[i].getValue() && luckyCard.getSuit().equals(magicHand[i].getSuit())){
+                    var=true;
+                    break;
+            }           
+        }
+        if(var){
+            System.out.println("YOU WON!");
+        }else{
+            System.out.println("YOU LOOSE!");
+        }
+       }    
     }
     
