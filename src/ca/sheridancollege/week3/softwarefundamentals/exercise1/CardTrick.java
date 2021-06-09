@@ -70,6 +70,5 @@ public class CardTrick {
             System.out.println("Lucky card not found in the magic Hand !");
         }
     }
-
 }
 
