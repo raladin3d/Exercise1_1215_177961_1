@@ -12,11 +12,10 @@ import java.util.Scanner;
  * Date: 2021/06/08
  */
 /**
- * A class that fills a magic hand of 7 cards with random Card Objects and then
- * asks the user to pick a card and searches the array of cards for the match to
- * the user's card.
- *
- *
+ * A class that fills a magic hand of 7 cards with random Card Objects
+ * and then asks the user to pick a card and searches the array of cards
+ * for the match to the user's card. To be used as starting code in ICE 1
+ * @author dancye
  * @author Mohamed Alhabbal
  */
 public class CardTrick {
@@ -66,9 +65,9 @@ public class CardTrick {
 
         // display the result based on the search
         if (found) {
-            System.out.println("Lucky Card found in magicHand !");
+            System.out.println("Lucky Card found in magic Hand !");
         } else {
-            System.out.println("Lucky card not found in the magicHand !");
+            System.out.println("Lucky card not found in the magic Hand !");
         }
     }
 
